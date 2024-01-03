@@ -1,0 +1,5 @@
+-Öncelikle compute engine bir vm makine olustur.
+-sonrasında docker ve compose yapılarını indir.
+-sudo apt-get update && sudo apt-get install docker.io && sudo apt-get install docker-compose >>kurulumlar
+-sudo docker-compose up -d >>> containeer ayaga kaldır.
+-8080 portuyla nifi arayüze bağlan ders1.xml template yükle

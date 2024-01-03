@@ -1,0 +1,29 @@
+# Docker Compose dosyasının sürümünü belirtir.
+version: "3.9"
+
+# Konteyner hizmetlerini tanımlayan bölüm.
+services:
+  # Apache NiFi'nin kullanılacağı bir konteyner hizmeti tanımlanır.
+  nifi2:
+    # Kullanılacak Docker imajını belirtir.
+    image: apache/nifi:1.13.1
+
+    # Konteynerin adını belirtir.
+    container_name: nifi-docker
+
+    # Port yönlendirmesi yaparak host makinedeki 8080 portunu konteyner içindeki 8080 porta bağlar.
+    ports:
+      - 8080:8080
+
+    # Host ve konteyner arasında bir volume bağlantısı kurar.
+    # /home/mhmmtcnr81/data dizini host'tan /data dizini konteynere bağlanır.
+    volumes:
+      - /home/mhmmtcnr81/data:/data
+
+
+#local
+#volumes:
+#   - C:/Users/cinar/Desktop/DE-MAYIS-BOOTCAMP-2023/4-Nifi/data:/data
+
+# sudo apt-get update && sudo apt-get install docker.io && sudo apt-get install docker-compose
+# sudo docker-compose up -d
